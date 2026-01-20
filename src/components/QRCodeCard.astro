@@ -3,12 +3,16 @@ import { Image } from "astro:assets";
 import myQrCode from "../assets/image-qr-code.png";
 ---
 
-<article class="qr-code-component bg-white p-8 rounded-2xl shadow-2xl">
-    <Image src={myQrCode} alt="QR Code" class="qr-code-image" />
+<article
+    class="qr-code-component max-w-[320px] bg-gray-50 p-4 rounded-2xl shadow-2xl"
+>
+    <Image src={myQrCode} alt="QR Code" class="qr-code-image rounded-2xl" />
 
-    <div class="qr-code-description">
-        <h1>Improve your front-end skills by building projects</h1>
-        <p>
+    <div class="qr-code-description mt-4">
+        <h1 class="font-bold mb-2 text-xl text-center text-gray-800">
+            Improve your front-end skills by building projects
+        </h1>
+        <p class="text-mg text-center text-gray-500">
             Scan the QR code to visit Frontend Mentor and take your coding
             skills to the next level
         </p>
