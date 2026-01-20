@@ -1,5 +1,6 @@
 ---
 import QRCodeCard from "../components/QRCodeCard.astro";
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -10,7 +11,7 @@ import QRCodeCard from "../components/QRCodeCard.astro";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
+	<body class="flex items-center min-h-screen bg-slate-300">
 		<QRCodeCard />
 	</body>
 </html>
