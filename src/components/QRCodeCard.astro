@@ -5,11 +5,9 @@ import myQrCode from "../assets/image-qr-code.png";
 
 <article
     class={`
-    /* DEFAULT: Vertical for Desktop and Portrait Phone */
     flex flex-col items-center bg-white p-4 rounded-3xl shadow-xl
     w-[320px]
 
-    /* HORIZONTAL: Only when screen is short AND wide (Mobile Landscape) */
     [@media(orientation:landscape)_and_(max-height:580px)]:flex-row
     [@media(orientation:landscape)_and_(max-height:580px)]:w-[560px]
     [@media(orientation:landscape)_and_(max-height:580px)]:max-w-[90vw]
@@ -30,7 +28,6 @@ import myQrCode from "../assets/image-qr-code.png";
     <div
         class={`
     qr-code-description px-4 py-4 text-center
-    /* Flip text to left only during the height-based horizontal mode */
     [@media(orientation:landscape)_and_(max-height:580px)]:text-left
     [@media(orientation:landscape)_and_(max-height:580px)]:w-1/2
     [@media(orientation:landscape)_and_(max-height:580px)]:pl-6
