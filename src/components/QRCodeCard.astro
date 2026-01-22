@@ -4,15 +4,42 @@ import myQrCode from "../assets/image-qr-code.png";
 ---
 
 <article
-    class="qr-code-component max-w-[320px] bg-gray-50 p-4 rounded-2xl shadow-2xl"
->
-    <Image src={myQrCode} alt="QR Code" class="qr-code-image rounded-2xl" />
+    class={`
+    /* DEFAULT: Vertical for Desktop and Portrait Phone */
+    flex flex-col items-center bg-white p-4 rounded-3xl shadow-xl
+    w-[320px]
 
-    <div class="qr-code-description mt-4 pb-4 px-4">
-        <h1 class="font-bold mb-2 text-xl text-center text-slate-900">
+    /* HORIZONTAL: Only when screen is short AND wide (Mobile Landscape) */
+    [@media(orientation:landscape)_and_(max-height:580px)]:flex-row
+    [@media(orientation:landscape)_and_(max-height:580px)]:w-[560px]
+    [@media(orientation:landscape)_and_(max-height:580px)]:max-w-[90vw]
+  `}
+>
+    <div
+        class="w-full [@media(orientation:landscape)_and_(max-height:580px)]:w-1/2"
+    >
+        <Image
+            src={myQrCode}
+            alt="QR Code to Frontend Mentor website"
+            loading="eager"
+            fetchpriority="high"
+            class="rounded-2xl w-full h-auto"
+        />
+    </div>
+
+    <div
+        class={`
+    qr-code-description px-4 py-4 text-center
+    /* Flip text to left only during the height-based horizontal mode */
+    [@media(orientation:landscape)_and_(max-height:580px)]:text-left
+    [@media(orientation:landscape)_and_(max-height:580px)]:w-1/2
+    [@media(orientation:landscape)_and_(max-height:580px)]:pl-6
+  `}
+    >
+        <h1 class="font-bold mb-3 text-xl text-slate-900 leading-tight">
             Improve your front-end skills by building projects
         </h1>
-        <p class="text-base text-center text-slate-500">
+        <p class="text-[15px] text-slate-500">
             Scan the QR code to visit Frontend Mentor and take your coding
             skills to the next level
         </p>
